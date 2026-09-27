@@ -7,7 +7,7 @@
 
   /* ---------- Intro ---------- */
   var intro = document.getElementById('intro');
-  var INTRO_TOTAL = 3000;
+  var INTRO_TOTAL = 5200;
 
   function rememberIntro() {
     try { sessionStorage.setItem('alkhair-intro', '1'); } catch (e) {}
@@ -28,11 +28,11 @@
       var skipIntro = function () {
         if (!intro || root.classList.contains('intro-skip')) return;
         var elapsed = (performance.now() - t0) / 1000;
-        if (elapsed > 1.6) return; // already leaving
+        if (elapsed > 3.9) return; // already leaving
         clearTimeout(introTimer);
-        root.style.setProperty('--intro', (elapsed + 0.3).toFixed(2) + 's');
+        root.style.setProperty('--intro', (elapsed + 0.45).toFixed(2) + 's');
         root.classList.add('intro-skip');
-        setTimeout(removeIntro, 800);
+        setTimeout(removeIntro, 950);
       };
 
       intro.addEventListener('click', skipIntro);
